@@ -1,0 +1,45 @@
+---
+interface ScheduleDay {
+  day: string;
+  hours: string;
+}
+
+interface Props {
+  schedule: ScheduleDay[];
+  title: string;
+  imageUrl?: string;
+}
+
+const { schedule, title, imageUrl } = Astro.props;
+---
+
+<div class="mb-12">
+  <h2 class="text-2xl md:text-3xl font-bold mb-6">{title}</h2>
+  
+  <div class="bg-white rounded-lg shadow-md overflow-hidden">
+    {imageUrl && (
+      <img src={imageUrl} alt="Horario" class="w-full h-auto object-cover" />
+    )}
+    
+    {!imageUrl && (
+      <div class="p-6">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="py-3 px-4 text-left font-bold">Día</th>
+              <th class="py-3 px-4 text-left font-bold">Horario</th>
+            </tr>
+          </thead>
+          <tbody>
+            {schedule.map((day, index) => (
+              <tr class={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                <td class="py-3 px-4 border-t border-gray-200">{day.day}</td>
+                <td class="py-3 px-4 border-t border-gray-200">{day.hours}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
+  </div>
+</div>

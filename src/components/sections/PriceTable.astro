@@ -1,0 +1,57 @@
+---
+interface PriceEntry {
+  title: string;
+  price: string;
+  description?: string;
+  features?: string[];
+  isHighlighted?: boolean;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  prices: PriceEntry[];
+}
+
+const { title, description, prices } = Astro.props;
+---
+
+<div class="mb-12">
+  <h2 class="text-2xl md:text-3xl font-bold mb-3">{title}</h2>
+  
+  {description && (
+    <p class="text-gray-600 mb-6">{description}</p>
+  )}
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+    {prices.map((price) => (
+      <div class={`card p-6 border ${price.isHighlighted ? 'border-primary shadow-lg relative' : 'border-gray-200'}`}>
+        {price.isHighlighted && (
+          <div class="absolute -top-4 right-4 bg-primary text-white text-sm py-1 px-3 rounded-full">
+            Popular
+          </div>
+        )}
+        
+        <h3 class="text-xl font-bold mb-2">{price.title}</h3>
+        <div class="text-3xl font-bold text-primary mb-2">{price.price}</div>
+        
+        {price.description && (
+          <p class="text-gray-600 mb-4">{price.description}</p>
+        )}
+        
+        {price.features && price.features.length > 0 && (
+          <ul class="space-y-2 mt-4">
+            {price.features.map((feature) => (
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-primary mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    ))}
+  </div>
+</div>

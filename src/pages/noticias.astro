@@ -1,0 +1,210 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+
+// Define news items
+const newsItems = [
+  {
+    title: "FEDERATE ESTE 2025 CON NUESTRO CLUB ALPINO",
+    date: "Diciembre 2024",
+    excerpt: "¡Ya puedes federarte para el año 2025 con nuestro Club Alpino! Descubre todas las ventajas de la federación y los diferentes tipos de licencias disponibles.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/2023/10/escalada-urban-monkey-scaled.jpg",
+    link: "#"
+  },
+  {
+    title: "OFERTA DE NAVIDAD",
+    date: "Diciembre 2024",
+    excerpt: "Aprovecha nuestras ofertas especiales para esta Navidad. Descuentos en bonos de entradas, cursos y material. ¡El regalo perfecto para los amantes de la escalada!",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_urban_monkey2-scaled.jpg",
+    link: "#"
+  },
+  {
+    title: "REGALA ALGO ESPECIAL ESTA NAVIDAD",
+    date: "Diciembre 2024",
+    excerpt: "Sorprende a tus seres queridos con un regalo original: bonos regalo de escalada, cursos o material. Una experiencia diferente que seguro agradecerán.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/2023/10/Rocodromo-urban-monkey-villalba-scaled.jpg",
+    link: "#"
+  },
+  {
+    title: "NUEVOS GRUPOS DE ENTRENAMIENTO INFANTIL",
+    date: "Noviembre 2024",
+    excerpt: "Abrimos nuevos grupos de entrenamiento para niños entre 6 y 14 años. Diferentes horarios para adaptarse a las necesidades de las familias.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_ninos_urban_monkey3-1-scaled.jpg",
+    link: "#"
+  },
+  {
+    title: "VUELTA AL COLE 2024 EN URBAN MONKEY",
+    date: "Septiembre 2024",
+    excerpt: "Con el comienzo del curso escolar, vuelven nuestras actividades extraescolares. Inscribe a tus hijos en nuestros grupos de escalada para niños.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/escalada_urban_monkey_ninos-scaled-qeomkk5xy6c0xbjr9khulb6hmlfy21m4f7hj45e96g.jpg",
+    link: "#"
+  },
+  {
+    title: "OFERTA DE VERANO Y NUEVOS HORARIOS EN MADRID",
+    date: "Julio 2024",
+    excerpt: "Descubre nuestros nuevos horarios de verano en el centro de Madrid y aprovecha las ofertas especiales para los meses de julio y agosto.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/2023/10/escalada-urban-monkey-scaled.jpg",
+    link: "#"
+  }
+];
+---
+
+<MainLayout title="News">
+  <!-- Hero Section -->
+  <Hero
+    title="MONKEY NEWS"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/2023/10/Vias_rocodromo_urban_monkey-scaled.jpg"
+    height="h-[40vh]"
+  />
+  
+  <!-- News Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <!-- News Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {newsItems.map((newsItem) => (
+          <div class="card group h-full flex flex-col">
+            <div class="relative overflow-hidden">
+              <img 
+                src={newsItem.imageUrl} 
+                alt={newsItem.title} 
+                class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute top-4 right-4 bg-primary text-white text-sm px-3 py-1 rounded-full">
+                {newsItem.date}
+              </div>
+            </div>
+            
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="text-xl font-bold mb-3">{newsItem.title}</h3>
+              <p class="text-gray-600 mb-4 flex-1">{newsItem.excerpt}</p>
+              <a 
+                href={newsItem.link} 
+                class="mt-auto text-primary font-medium flex items-center hover:underline"
+              >
+                Leer más
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Social Media Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Madrid Social Media -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6">SÍGUENOS EN MADRID</h2>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex space-x-4 mb-4">
+              <a 
+                href="https://www.instagram.com/urbanmonkeymadrid/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center transition-colors hover:bg-primary hover:text-white"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
+              </a>
+              <a 
+                href="https://www.facebook.com/urbanmonkeymadrid" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center transition-colors hover:bg-primary hover:text-white"
+              >
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+            </div>
+            
+            <p class="text-gray-600">
+              Sigue nuestras redes sociales para estar al día de todas las novedades, eventos y promociones en nuestro centro de Madrid.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Villalba Social Media -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6">SÍGUENOS EN VILLALBA</h2>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex space-x-4 mb-4">
+              <a 
+                href="https://www.instagram.com/urbanmonkeyvillalba/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center transition-colors hover:bg-primary hover:text-white"
+              >
+                <i class="fab fa-instagram text-2xl"></i>
+              </a>
+              <a 
+                href="https://www.facebook.com/urbanmonkeyvillalba" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center transition-colors hover:bg-primary hover:text-white"
+              >
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+            </div>
+            
+            <p class="text-gray-600">
+              Sigue nuestras redes sociales para estar al día de todas las novedades, eventos y promociones en nuestro centro de Collado Villalba.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Newsletter Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">SUSCRÍBETE A NUESTRA NEWSLETTER</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Recibe las últimas noticias, promociones y eventos directamente en tu correo electrónico.
+        </p>
+        
+        <form class="flex flex-col sm:flex-row gap-3">
+          <input 
+            type="email" 
+            placeholder="Tu correo electrónico" 
+            class="flex-1 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+            required
+          />
+          <button 
+            type="submit" 
+            class="btn whitespace-nowrap px-6"
+          >
+            Suscribirme
+          </button>
+        </form>
+        <p class="text-sm text-gray-500 mt-3">
+          Respetamos tu privacidad. Puedes darte de baja en cualquier momento.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">¿QUIERES PROBAR LA ESCALADA?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Reserva una clase de prueba y descubre una nueva forma de entender este deporte.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/madrid/clase-prueba" class="btn bg-white text-primary hover:bg-gray-100">
+          Clase prueba Madrid
+        </a>
+        <a href="/villalba/clase-prueba" class="btn bg-white text-primary hover:bg-gray-100">
+          Clase prueba Villalba
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

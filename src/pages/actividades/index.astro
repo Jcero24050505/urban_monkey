@@ -1,0 +1,180 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import FeaturedActivities from '../../components/sections/FeaturedActivities.astro';
+
+// Define activities
+const activities = [
+  {
+    title: "CELEBRACIÓN DE CUMPLEAÑOS",
+    description: "Celebra tu cumpleaños de una forma diferente y divertida con actividades de escalada adaptadas a todas las edades.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/2023/10/cumpleanos-escalada-.jpg",
+    link: "/actividades/cumpleanos"
+  },
+  {
+    title: "ACTIVIDADES CON COLEGIOS",
+    description: "Excursiones y actividades para colegios e institutos. Experiencias educativas y divertidas para estudiantes de todas las edades.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/2023/10/actividades-colegios-Urban-Monkey.jpg",
+    link: "/actividades/colegios"
+  },
+  {
+    title: "ACTIVIDADES PARA EMPRESAS",
+    description: "Team building y eventos corporativos. Fortalece los lazos entre empleados con actividades de escalada y colaboración.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/2023/10/empresas.jpg",
+    link: "/actividades/empresas"
+  }
+];
+---
+
+<MainLayout title="Actividades">
+  <!-- Hero Section -->
+  <Hero
+    title="NUESTRAS ACTIVIDADES DE ESCALADA"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_actividades_colegios-1536x594.jpg"
+    height="h-[50vh]"
+  />
+  
+  <!-- Intro Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">ACTIVIDADES PARA TODOS</h2>
+        <p class="text-xl text-gray-700 mb-6">
+          En Urban Monkey ofrecemos diferentes actividades adaptadas a grupos, colegios, empresas y celebraciones especiales como cumpleaños.
+        </p>
+        <p class="text-lg text-gray-600 mb-8">
+          Todas nuestras actividades están dirigidas por monitores titulados que garantizan la seguridad y la diversión de todos los participantes.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Activities Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">NUESTRAS ACTIVIDADES</h2>
+      
+      <FeaturedActivities activities={activities} />
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">¿POR QUÉ ELEGIR NUESTRAS ACTIVIDADES?</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-shield-alt text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Seguridad</h3>
+          <p class="text-gray-600">
+            Monitores titulados y protocolos de seguridad que garantizan la mejor experiencia.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-graduation-cap text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Experiencia</h3>
+          <p class="text-gray-600">
+            Más de 13 años formando escaladores y organizando actividades para todos los públicos.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-puzzle-piece text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Personalización</h3>
+          <p class="text-gray-600">
+            Actividades adaptadas a las necesidades específicas de cada grupo y ocasión.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-smile-beam text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Diversión</h3>
+          <p class="text-gray-600">
+            Garantizamos momentos inolvidables llenos de diversión, retos y compañerismo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">NUESTROS CENTROS</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="card overflow-hidden group h-full">
+          <div class="relative overflow-hidden">
+            <img 
+              src="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada-urban-monkey-scaled.jpg" 
+              alt="Urban Monkey Madrid" 
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-all duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70"></div>
+            <h3 class="absolute bottom-6 left-6 text-white text-3xl font-bold">MADRID CENTRO</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4">
+              C/Tarragona 8, 28045 Madrid<br>
+              Teléfono: +34 91 530 94 94<br>
+              Email: registros@urbanmonkey.es
+            </p>
+            <a href="/madrid/contacto" class="btn">
+              Solicitar información
+            </a>
+          </div>
+        </div>
+        
+        <div class="card overflow-hidden group h-full">
+          <div class="relative overflow-hidden">
+            <img 
+              src="https://urbanmonkey.es/wp-content/uploads/2023/10/Rocodromo-urban-monkey-villalba-scaled.jpg" 
+              alt="Urban Monkey Villalba" 
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-all duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70"></div>
+            <h3 class="absolute bottom-6 left-6 text-white text-3xl font-bold">COLLADO VILLALBA</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4">
+              C/Husillo 12-14, 28400 – Collado Villalba (Madrid)<br>
+              Teléfono: +34 91 054 71 44<br>
+              Email: villalba@urbanmonkey.es
+            </p>
+            <a href="/villalba/contacto" class="btn">
+              Solicitar información
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">¿BUSCAS UNA ACTIVIDAD DIFERENTE?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Contáctanos para recibir información detallada sobre nuestras actividades y solicitar un presupuesto personalizado.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/madrid/contacto" class="btn bg-white text-primary hover:bg-gray-100">
+          Contactar Madrid
+        </a>
+        <a href="/villalba/contacto" class="btn bg-white text-primary hover:bg-gray-100">
+          Contactar Villalba
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

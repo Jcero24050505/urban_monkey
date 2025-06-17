@@ -1,0 +1,235 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+
+// Define birthday package details
+const birthdayPackage = {
+  price: "12€ por niño (mínimo 10 niños)",
+  duration: "1 hora y 30 minutos",
+  includes: [
+    "Actividad de escalada dirigida por monitores",
+    "Material necesario",
+    "Zona reservada para merendar (comida no incluida)",
+    "Invitaciones digitales"
+  ],
+  ageGroups: [
+    "Pequeños: de 5 a 8 años",
+    "Medianos: de 9 a 12 años",
+    "Mayores: de 13 a 16 años"
+  ]
+};
+---
+
+<MainLayout title="Cumpleaños">
+  <!-- Hero Section -->
+  <Hero
+    title="CELEBRA TU CUMPLEAÑOS CON NOSOTROS"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/2023/10/cumpleanos-escalada-.jpg"
+    height="h-[50vh]"
+  />
+  
+  <!-- Main Content -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+          <h2 class="text-3xl font-bold mb-6">UN CUMPLEAÑOS DIFERENTE</h2>
+          
+          <p class="text-lg mb-6">
+            Realizaremos esta actividad en cualquiera de los centros de formación y entrenamiento de escalada de Urban Monkey.
+          </p>
+          
+          <p class="text-lg mb-6">
+            Durante una sesión de una hora y media, los participantes podrán sumergirse en un ambiente dinámico y divertido, donde se llevarán a cabo distintos juegos y desafíos relacionados con la escalada. A través de estas actividades, no solo desarrollarán habilidades físicas y de coordinación, sino que también despertarán su espíritu aventurero, sintiéndose como auténticos monos trepadores.
+          </p>
+          
+          <p class="text-lg mb-6">
+            El equipo de monitores de Urban Monkey tendrá un papel fundamental en esta experiencia. Serán los encargados de guiar a los participantes en cada una de las dinámicas, proporcionando instrucciones claras y fomentando un ambiente de aprendizaje seguro y motivador. Además, estarán siempre atentos para garantizar la seguridad de todos, supervisando cada movimiento y asegurándose de que se sigan las normas adecuadas para disfrutar de la escalada sin riesgos.
+          </p>
+          
+          <p class="text-lg mb-6">
+            Esta actividad es una excelente oportunidad para divertirse, aprender nuevas habilidades y superar desafíos en un entorno seguro y estimulante.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Image Gallery -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-8">CUMPLEAÑOS DE ESCALADA</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/cumpleanos-escalada-.jpg" 
+            alt="Celebración de cumpleaños" 
+            class="w-full h-auto"
+          />
+        </div>
+        
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_ninos_urban_monkey3-1-scaled.jpg" 
+            alt="Niños escalando en cumpleaños" 
+            class="w-full h-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package Details Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <h3 class="text-3xl font-bold text-center mb-12">PRECIO</h3>
+        
+        <div class="bg-white p-8 rounded-lg shadow-md border border-primary">
+          <div class="text-3xl font-bold text-primary text-center mb-6">{birthdayPackage.price}</div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+              <h4 class="text-xl font-bold mb-4">Incluye:</h4>
+              <ul class="space-y-3">
+                {birthdayPackage.includes.map((item) => (
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-bold mb-4">Grupos por edades:</h4>
+              <ul class="space-y-3">
+                {birthdayPackage.ageGroups.map((group) => (
+                  <li class="flex items-start">
+                    <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span>{group}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          
+          <div class="bg-gray-50 p-4 rounded-lg mb-6">
+            <h4 class="text-lg font-bold mb-2">HORARIO:</h4>
+            <p>Fines de semana. Contacta con el centro donde quieres realizar el cumpleaños para que te indiquen los horarios disponibles.</p>
+          </div>
+          
+          <div class="bg-gray-50 p-4 rounded-lg mb-6">
+            <h4 class="text-lg font-bold mb-2">DURACIÓN:</h4>
+            <p>{birthdayPackage.duration}</p>
+          </div>
+          
+          <div class="text-center mt-6">
+            <p class="text-gray-600 mb-6">
+              Para más información y reservas, contacta con el centro de tu elección:
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/madrid/contacto" class="btn flex-1 text-center">
+                Madrid Centro
+              </a>
+              <a href="/villalba/contacto" class="btn flex-1 text-center">
+                Villalba
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQs Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">PREGUNTAS FRECUENTES</h2>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <details class="group">
+            <summary class="flex justify-between items-center p-6 cursor-pointer">
+              <h3 class="text-xl font-medium">¿Qué ropa deben llevar los niños?</h3>
+              <span class="transition-transform group-open:rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="p-6 border-t border-gray-200">
+              <p>Ropa cómoda y deportiva. Preferiblemente pantalones largos flexibles y camiseta. Calzado deportivo cerrado.</p>
+            </div>
+          </details>
+          
+          <details class="group border-t border-gray-200">
+            <summary class="flex justify-between items-center p-6 cursor-pointer">
+              <h3 class="text-xl font-medium">¿Es necesario tener experiencia previa en escalada?</h3>
+              <span class="transition-transform group-open:rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="p-6 border-t border-gray-200">
+              <p>No es necesario tener experiencia previa. Nuestros monitores adaptan las actividades al nivel de los participantes.</p>
+            </div>
+          </details>
+          
+          <details class="group border-t border-gray-200">
+            <summary class="flex justify-between items-center p-6 cursor-pointer">
+              <h3 class="text-xl font-medium">¿Qué incluye exactamente el precio?</h3>
+              <span class="transition-transform group-open:rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="p-6 border-t border-gray-200">
+              <p>El precio incluye la actividad de escalada dirigida por monitores titulados, todo el material necesario y una zona reservada para merendar. La comida y bebida no están incluidas.</p>
+            </div>
+          </details>
+          
+          <details class="group border-t border-gray-200">
+            <summary class="flex justify-between items-center p-6 cursor-pointer">
+              <h3 class="text-xl font-medium">¿Pueden quedarse los padres durante la actividad?</h3>
+              <span class="transition-transform group-open:rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="p-6 border-t border-gray-200">
+              <p>Sí, los padres pueden quedarse durante la actividad en la zona designada, aunque la actividad estará dirigida por nuestros monitores.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">¿QUIERES CELEBRAR UN CUMPLEAÑOS DIFERENTE?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Contacta con nosotros para reservar y organizar un cumpleaños inolvidable.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/madrid/contacto" class="btn bg-white text-primary hover:bg-gray-100">
+          Contactar Madrid
+        </a>
+        <a href="/villalba/contacto" class="btn bg-white text-primary hover:bg-gray-100">
+          Contactar Villalba
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,232 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+
+// Define school activities
+const schoolActivities = [
+  "Visitas para grupos escolares",
+  "Actividades extraescolares regulares",
+  "Salidas puntuales de un día",
+  "Semanas deportivas y culturales",
+  "Excursiones de fin de curso"
+];
+
+// Define activity structure
+const activityStructure = [
+  "Recepción y bienvenida al grupo",
+  "Explicación de normas básicas de seguridad",
+  "División en grupos según edad y/o nivel",
+  "Calentamiento específico para escalada",
+  "Actividades dirigidas adaptadas a cada grupo",
+  "Juegos cooperativos relacionados con la escalada",
+  "Cierre de la actividad con reflexión grupal"
+];
+---
+
+<MainLayout title="Actividades para Colegios">
+  <!-- Hero Section -->
+  <Hero
+    title="ACTIVIDADES PARA COLEGIOS E INSTITUTOS"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_actividades_colegios-1536x594.jpg"
+    height="h-[50vh]"
+  />
+  
+  <!-- Main Content -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+          <h2 class="text-3xl font-bold mb-6">ESCALADA COMO ACTIVIDAD EXTRAESCOLAR</h2>
+          
+          <p class="text-lg mb-6">
+            Dentro de las muchas empresas de <strong>actividades extraexcolares</strong>, Urban Monkey quiere introducir la <strong>escalada</strong> como una nueva actividad para <strong>colegios e institutos</strong> y de esa manera hacer llegar este maravilloso deporte a la gente más joven.
+          </p>
+          
+          <p class="text-lg mb-6">
+            Trabajamos desde hace más de 13 años con colegios, ayuntamientos, asociaciones y entidades deportivas.
+          </p>
+          
+          <h3 class="text-xl font-bold mb-3">Realizamos actividades como:</h3>
+          <ul class="space-y-3 mb-8">
+            {schoolActivities.map((activity) => (
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>{activity}</span>
+              </li>
+            ))}
+          </ul>
+          
+          <p class="text-lg mb-6">
+            La formación que impartimos es la recogida en el currículo escolar, de manera que todo el alumnado que realiza nuestras actividades adquiere unos conocimientos básicos de este deporte.
+          </p>
+          
+          <h3 class="text-xl font-bold mb-3">Las dinámicas que se realizan se adaptan a la edad y necesidad del grupo, pero de manera general consisten en lo siguiente:</h3>
+          <ol class="space-y-3 mb-8 list-decimal pl-6">
+            {activityStructure.map((step) => (
+              <li class="pl-2">{step}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Image Gallery -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-8">ESCALADA PARA COLEGIOS</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_actividades_colegios-1536x594.jpg" 
+            alt="Actividades de escalada para colegios" 
+            class="w-full h-64 object-cover"
+          />
+        </div>
+        
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_ninos_urban_monkey5.jpg" 
+            alt="Niños escalando" 
+            class="w-full h-64 object-cover"
+          />
+        </div>
+        
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/actividades-colegios-Urban-Monkey.jpg" 
+            alt="Grupos escolares" 
+            class="w-full h-64 object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">BENEFICIOS DE LA ESCALADA COMO ACTIVIDAD ESCOLAR</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fas fa-brain text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Desarrollo Físico</h3>
+          <p class="text-gray-600">
+            Mejora la condición física general, desarrollando la fuerza, la flexibilidad, el equilibrio y la coordinación.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fas fa-lightbulb text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Desarrollo Cognitivo</h3>
+          <p class="text-gray-600">
+            Estimula la capacidad de análisis, resolución de problemas y toma de decisiones al enfrentarse a diferentes rutas.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fas fa-users text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Desarrollo Social</h3>
+          <p class="text-gray-600">
+            Fomenta el trabajo en equipo, la comunicación y el apoyo mutuo entre compañeros para alcanzar objetivos comunes.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fas fa-heart text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Desarrollo Emocional</h3>
+          <p class="text-gray-600">
+            Ayuda a gestionar el miedo, aumentar la confianza en uno mismo y desarrollar la resiliencia ante las dificultades.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fas fa-medal text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Valores Deportivos</h3>
+          <p class="text-gray-600">
+            Enseña valores como el esfuerzo, la superación personal, el respeto y la deportividad en un entorno diferente.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fas fa-leaf text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Conexión con la Naturaleza</h3>
+          <p class="text-gray-600">
+            Introduce a los estudiantes en un deporte que puede practicarse en la naturaleza, fomentando el respeto por el medio ambiente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">LO QUE DICEN LOS CENTROS EDUCATIVOS</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex text-primary mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="italic text-gray-600 mb-4">
+            "La actividad de escalada ha sido un éxito entre nuestros alumnos. Los monitores saben adaptar perfectamente las dinámicas a las diferentes edades y capacidades. Los niños vuelven entusiasmados y pidiendo repetir."
+          </p>
+          <p class="font-bold">María P. - Coordinadora de Actividades, CEIP San José</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex text-primary mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="italic text-gray-600 mb-4">
+            "Llevamos tres años colaborando con Urban Monkey para las excursiones de fin de curso y la experiencia siempre es excelente. Es una actividad que combina diversión, aprendizaje y valores. Muy recomendable."
+          </p>
+          <p class="font-bold">Antonio G. - Director, IES Montaña</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">¿BUSCAS UNA ACTIVIDAD DIFERENTE PARA TU CENTRO EDUCATIVO?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Contacta con nosotros para recibir información detallada y un presupuesto personalizado para tu centro.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/madrid/contacto" class="btn bg-white text-primary hover:bg-gray-100">
+          Contactar Madrid
+        </a>
+        <a href="/villalba/contacto" class="btn bg-white text-primary hover:bg-gray-100">
+          Contactar Villalba
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

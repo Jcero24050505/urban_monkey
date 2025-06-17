@@ -1,0 +1,210 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import PriceTable from '../../components/sections/PriceTable.astro';
+import ScheduleTable from '../../components/sections/ScheduleTable.astro';
+
+// Define Villalba pricing plans
+const freeClimbingPlans = [
+  {
+    title: "Entrada Individual",
+    price: "11€",
+    features: [
+      "Acceso por un día",
+      "Uso de todas las instalaciones",
+      "Material no incluido"
+    ]
+  },
+  {
+    title: "Bono 5 Entradas",
+    price: "45€",
+    description: "Válido para 3 meses",
+    features: [
+      "5 días de acceso",
+      "Uso de todas las instalaciones",
+      "Material no incluido"
+    ],
+    isHighlighted: true
+  },
+  {
+    title: "Bono 10 Entradas",
+    price: "80€",
+    description: "Válido para 4 meses",
+    features: [
+      "10 días de acceso",
+      "Uso de todas las instalaciones",
+      "Material no incluido"
+    ]
+  },
+  {
+    title: "Mensual",
+    price: "60€",
+    features: [
+      "Acceso ilimitado durante un mes",
+      "Uso de todas las instalaciones",
+      "Material no incluido"
+    ]
+  },
+  {
+    title: "Trimestral",
+    price: "160€",
+    features: [
+      "Acceso ilimitado durante tres meses",
+      "Uso de todas las instalaciones",
+      "Material no incluido"
+    ]
+  },
+  {
+    title: "Anual",
+    price: "550€",
+    features: [
+      "Acceso ilimitado durante un año",
+      "Uso de todas las instalaciones",
+      "Material no incluido"
+    ]
+  }
+];
+
+const trainingPlans = [
+  {
+    title: "Mensual",
+    price: "95€",
+    features: [
+      "2 clases por semana",
+      "Acceso ilimitado",
+      "Material incluido"
+    ],
+    isHighlighted: true
+  },
+  {
+    title: "Trimestral",
+    price: "240€",
+    features: [
+      "2 clases por semana",
+      "Acceso ilimitado",
+      "Material incluido"
+    ]
+  },
+  {
+    title: "Anual",
+    price: "850€",
+    features: [
+      "2 clases por semana",
+      "Acceso ilimitado",
+      "Material incluido"
+    ]
+  }
+];
+
+// Schedule information
+const scheduleUrl = "https://urbanmonkey.es/wp-content/uploads/2023/11/horario_rocodromo_villalba_urban_monkey.jpg";
+const trainingScheduleUrl = "https://urbanmonkey.es/wp-content/uploads/2023/10/entrenamientos_rocodromo_villalba_urban_monkey.jpg";
+---
+
+<MainLayout title="Tarifas y horarios Villalba">
+  <!-- Hero Section -->
+  <Hero
+    title="NUESTROS HORARIOS Y TARIFAS"
+    subtitle="COLLADO VILLALBA"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/2023/10/Rocodromo-urban-monkey-villalba-scaled.jpg"
+    height="h-[50vh]"
+  />
+  
+  <!-- Intro Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">URBAN MONKEY VILLALBA</h2>
+        <p class="text-xl text-gray-700 mb-4">
+          Urban Monkey… otra forma de entender la escalada.
+        </p>
+        <p class="text-lg text-gray-600">
+          Formando escaladores y escaladoras desde el año 2010<br>
+          C/Husillo 12-14, 28400 Collado Villalba
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Schedule Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <ScheduleTable 
+        title="HORARIO DE VILLALBA"
+        imageUrl={scheduleUrl}
+      />
+    </div>
+  </section>
+
+  <!-- Pricing Section - Free Climbing -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <PriceTable 
+        title="TARIFAS POR LIBRE"
+        description="Accede a nuestras instalaciones sin monitor, a tu ritmo."
+        prices={freeClimbingPlans}
+      />
+    </div>
+  </section>
+
+  <!-- Pricing Section - Directed Training -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <PriceTable 
+        title="TARIFAS ENTRENAMIENTO DIRIGIDO"
+        description="Entrena con nuestros monitores expertos y mejora tu técnica."
+        prices={trainingPlans}
+      />
+    </div>
+  </section>
+
+  <!-- Training Schedule Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <ScheduleTable 
+        title="HORARIOS ENTRENAMIENTO DIRIGIDO"
+        imageUrl={trainingScheduleUrl}
+      />
+    </div>
+  </section>
+  
+  <!-- Additional Info -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <h3 class="text-2xl font-bold mb-4">ADULTOS</h3>
+          <p class="text-gray-700 mb-4">
+            Nuestros grupos de entrenamiento dirigido para adultos están diseñados para todos los niveles, desde principiantes hasta escaladores avanzados.
+          </p>
+          <a href="/cursos/entrenamiento" class="btn">
+            Más información
+          </a>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <h3 class="text-2xl font-bold mb-4">MENORES DE 14 AÑOS</h3>
+          <p class="text-gray-700 mb-4">
+            Actividades divertidas para niños donde desarrollan fuerza, coordinación y agilidad mientras aprenden a escalar.
+          </p>
+          <a href="/cursos/entrenamiento-ninos" class="btn">
+            Más información
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">¿QUIERES PROBAR LA ESCALADA?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Reserva una clase de prueba y descubre una nueva forma de entender este deporte.
+      </p>
+      <a href="/villalba/clase-prueba" class="btn bg-white text-primary hover:bg-gray-100">
+        Reservar clase
+      </a>
+    </div>
+  </section>
+</MainLayout>

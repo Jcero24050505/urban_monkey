@@ -1,0 +1,173 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+
+// Define price plans
+const pricePlans = [
+  {
+    title: "Mensual",
+    price: "95€",
+    features: [
+      "2 clases por semana",
+      "Acceso ilimitado a las instalaciones",
+      "Material incluido",
+      "Técnicas específicas de escalada",
+      "Ejercicios de fuerza y coordinación"
+    ]
+  },
+  {
+    title: "Trimestral",
+    price: "240€",
+    features: [
+      "2 clases por semana",
+      "Acceso ilimitado a las instalaciones",
+      "Material incluido",
+      "Técnicas específicas de escalada",
+      "Ejercicios de fuerza y coordinación",
+      "Ahorro de 45€ respecto a la tarifa mensual"
+    ],
+    isHighlighted: true
+  },
+  {
+    title: "Anual",
+    price: "850€",
+    features: [
+      "2 clases por semana",
+      "Acceso ilimitado a las instalaciones",
+      "Material incluido",
+      "Técnicas específicas de escalada",
+      "Ejercicios de fuerza y coordinación",
+      "Ahorro de 290€ respecto a la tarifa mensual"
+    ]
+  }
+];
+---
+
+<MainLayout title="Grupos Entrenamiento">
+  <!-- Hero Section -->
+  <Hero
+    title="GRUPOS DE ENTRENAMIENTO DIRIGIDO"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/Entrenamientos_dirigidos_rocodromo_urban_monkey-scaled-qeomlktncpq7i42ibicasjxgsmf9e8nnk8xgtxvwfs.jpg"
+    height="h-[50vh]"
+  />
+  
+  <!-- Main Content -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">¡MEJORA TU TÉCNICA Y DIVIÉRTETE!</h2>
+        
+        <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+          <div class="prose max-w-none">
+            <p class="text-lg mb-4">
+              Nuestros grupos de entrenamiento dirigido están diseñados para personas de todos los niveles, desde aquellos que están dando sus primeros pasos en la escalada hasta quienes buscan perfeccionar sus habilidades. Cada clase es guiada por uno de nuestros monitores expertos, quienes te enseñarán técnicas de movimiento y gestualidad específicas para la escalada.
+            </p>
+            
+            <p class="text-lg mb-4">
+              A través de una combinación de ejercicios y juegos, trabajarás en tu fuerza y coordinación de una manera amena y divertida. Nuestro enfoque está en hacer que el aprendizaje sea accesible y entretenido para todos.
+            </p>
+            
+            <p class="text-lg mb-4">
+              Además, al inscribirte en nuestros grupos de entrenamiento dirigido, disfrutarás de acceso libre a nuestras instalaciones durante el periodo que hayas pagado. Esto te permitirá entrenar de forma independiente y aplicar lo aprendido en las clases.
+            </p>
+            
+            <p class="text-lg font-bold">
+              ¡Únete a nosotros y descubre lo emocionante que puede ser la escalada!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Image Gallery -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-8">ENTRENAMIENTO DE ESCALADA</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/Entrenamientos_dirigidos_rocodromo_urban_monkey-scaled-qeomlktncpq7i42ibicasjxgsmf9e8nnk8xgtxvwfs.jpg" 
+            alt="Entrenamiento dirigido" 
+            class="w-full h-auto"
+          />
+        </div>
+        
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_urban_monkey2-scaled.jpg" 
+            alt="Escaladores en entrenamiento" 
+            class="w-full h-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <h3 class="text-3xl font-bold text-center mb-12">PRECIO</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {pricePlans.map((plan) => (
+          <div class={`bg-white p-6 rounded-lg shadow-md border ${plan.isHighlighted ? 'border-primary relative' : 'border-gray-200'}`}>
+            {plan.isHighlighted && (
+              <div class="absolute -top-4 right-4 bg-primary text-white text-sm py-1 px-3 rounded-full">
+                Recomendado
+              </div>
+            )}
+            
+            <h4 class="text-xl font-bold mb-2">{plan.title}</h4>
+            <div class="text-3xl font-bold text-primary mb-4">{plan.price}</div>
+            
+            <ul class="space-y-2 mb-6">
+              {plan.features.map((feature) => (
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-primary mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      
+      <div class="mt-12 text-center">
+        <p class="text-lg mb-6">
+          Para más información sobre horarios y disponibilidad, consulta en nuestros centros:
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/madrid/contacto" class="btn">
+            Madrid Centro
+          </a>
+          <a href="/villalba/contacto" class="btn">
+            Collado Villalba
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">¿QUIERES PROBAR NUESTROS ENTRENAMIENTOS?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Reserva una clase de prueba y descubre todo lo que puedes aprender con nuestros monitores expertos.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/madrid/clase-prueba" class="btn bg-white text-primary hover:bg-gray-100">
+          Clase prueba Madrid
+        </a>
+        <a href="/villalba/clase-prueba" class="btn bg-white text-primary hover:bg-gray-100">
+          Clase prueba Villalba
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

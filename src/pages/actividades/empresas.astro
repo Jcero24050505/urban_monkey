@@ -1,0 +1,239 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+
+// Define corporate event options
+const eventOptions = [
+  {
+    title: "ESCALADA INDOOR",
+    description: "Actividad en nuestras instalaciones con diferentes pruebas y desafíos adaptados a tu equipo, independientemente de su condición física o experiencia previa.",
+    icon: "fas fa-mountain"
+  },
+  {
+    title: "ESCALADA Y SENDERISMO OUTDOOR",
+    description: "Actividad en entorno natural combinando escalada en roca y senderismo. Una experiencia completa para fortalecer los lazos del equipo en plena naturaleza.",
+    icon: "fas fa-hiking"
+  }
+];
+
+// Define benefits
+const benefits = [
+  "Mejora de la comunicación entre los miembros del equipo",
+  "Desarrollo de confianza mutua",
+  "Fomento del trabajo en equipo y la colaboración",
+  "Identificación de liderazgos naturales",
+  "Fortalecimiento del sentimiento de pertenencia",
+  "Superación de retos juntos como equipo",
+  "Creación de recuerdos y experiencias compartidas"
+];
+---
+
+<MainLayout title="Actividades para Empresas">
+  <!-- Hero Section -->
+  <Hero
+    title="ACTIVIDADES PARA EMPRESAS"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/2023/10/actividades-empresas-madrid-1536x494.jpg"
+    height="h-[50vh]"
+  />
+  
+  <!-- Main Content -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+          <h2 class="text-3xl font-bold mb-6">TEAM BUILDING A TRAVÉS DE LA ESCALADA</h2>
+          
+          <p class="text-lg mb-6">
+            Dentro de las muchas <strong>empresas de actividades de Team Building</strong>, Urban Monkey propone la <strong>escalada y el senderismo</strong> como una forma ideal para ayudar a los trabajadores de una empresa a trabajar en equipo, sentirse unidos y progresar juntos a nivel laboral.
+          </p>
+          
+          <h3 class="text-xl font-bold mb-6">Existen dos posibilidades de cómo configurar el evento:</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            {eventOptions.map((option) => (
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                    <i class={`${option.icon} text-primary text-xl`}></i>
+                  </div>
+                  <h4 class="text-lg font-bold">{option.title}</h4>
+                </div>
+                <p class="text-gray-600">{option.description}</p>
+              </div>
+            ))}
+          </div>
+          
+          <p class="text-lg font-bold mb-6">PÍDENOS PRESUPUESTO EN EL CENTRO QUE PREFIERAS:</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/madrid/contacto" class="btn flex-1 text-center">
+              + MADRID
+            </a>
+            <a href="/villalba/contacto" class="btn flex-1 text-center">
+              + VILLALBA
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Image Gallery -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-8">ACTIVIDADES PARA EMPRESAS</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/actividades-empresas-madrid-1536x494.jpg" 
+            alt="Actividades indoor para empresas" 
+            class="w-full h-64 object-cover"
+          />
+        </div>
+        
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/actividades-empresas-madrid-outdoor.jpg" 
+            alt="Actividades outdoor para empresas" 
+            class="w-full h-64 object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">BENEFICIOS DEL TEAM BUILDING A TRAVÉS DE LA ESCALADA</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <div class="bg-white p-6 rounded-lg shadow-md h-full">
+            <h3 class="text-xl font-bold mb-4">¿Por qué elegir la escalada para tu equipo?</h3>
+            <ul class="space-y-3">
+              {benefits.map((benefit) => (
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        
+        <div>
+          <div class="bg-white p-6 rounded-lg shadow-md h-full">
+            <h3 class="text-xl font-bold mb-4">Personalización de la experiencia</h3>
+            <p class="text-gray-600 mb-4">
+              En Urban Monkey adaptamos cada actividad a las necesidades específicas de tu empresa:
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Actividades adaptadas a cualquier condición física</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Duración flexible según tus necesidades</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Posibilidad de incluir catering y espacios para reuniones</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Retos y dinámicas específicas para los objetivos de tu equipo</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Documentación fotográfica de la actividad</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">LO QUE DICEN NUESTROS CLIENTES CORPORATIVOS</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex text-primary mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="italic text-gray-600 mb-4">
+            "Organizamos una jornada de team building con nuestro departamento y fue todo un éxito. La actividad estaba perfectamente planificada y los monitores supieron adaptar los desafíos a todos los participantes."
+          </p>
+          <p class="font-bold">Elena R. - Directora de RRHH, Tecnología Avanzada</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex text-primary mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="italic text-gray-600 mb-4">
+            "La experiencia outdoor fue increíble. Nuestro equipo todavía habla de ello meses después. Se notó un cambio positivo en la comunicación y el ambiente de trabajo tras la actividad."
+          </p>
+          <p class="font-bold">Carlos M. - CEO, Startup Innovación</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex text-primary mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="italic text-gray-600 mb-4">
+            "Repetimos cada año con Urban Monkey para nuestros eventos de empresa. La combinación de diversión, desafío y aprendizaje que ofrecen es exactamente lo que buscamos para nuestros equipos."
+          </p>
+          <p class="font-bold">Laura G. - Directora de Operaciones, Consultoría Global</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">¿BUSCAS UNA ACTIVIDAD DIFERENTE PARA TU EMPRESA?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Contacta con nosotros para recibir información detallada y un presupuesto personalizado para tu equipo.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/madrid/contacto" class="btn bg-white text-primary hover:bg-gray-100">
+          Contactar Madrid
+        </a>
+        <a href="/villalba/contacto" class="btn bg-white text-primary hover:bg-gray-100">
+          Contactar Villalba
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,139 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import FeaturedActivities from '../components/sections/FeaturedActivities.astro';
+import NewsletterSection from '../components/sections/NewsletterSection.astro';
+
+// Define featured activities for home page
+const featuredActivities = [
+  {
+    title: "ENTRENAMIENTO DIRIGIDO",
+    description: "Mejora tu técnica y diviértete con nuestros grupos de entrenamiento dirigido diseñados para todos los niveles.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/Entrenamientos_dirigidos_rocodromo_urban_monkey-scaled-qeomlktncpq7i42ibicasjxgsmf9e8nnk8xgtxvwfs.jpg",
+    link: "/cursos/entrenamiento"
+  },
+  {
+    title: "BAUTISMOS DE ESCALADA",
+    description: "Primera toma de contacto con la escalada. Sesiones de una hora y media para descubrir este deporte.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/bautismo-de-escalada-2-qeomlf6m7pihkgap8fwjdlcp8b724219jh0jya49h4.jpg",
+    link: "/cursos/bautismo"
+  },
+  {
+    title: "GRUPOS PARA NIÑOS",
+    description: "Actividades divertidas para niños de 6 a 14 años donde desarrollan fuerza, coordinación y agilidad.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/escalada_urban_monkey_ninos-scaled-qeomkk5xy6c0xbjr9khulb6hmlfy21m4f7hj45e96g.jpg",
+    link: "/cursos/entrenamiento-ninos"
+  }
+];
+
+// Define locations for home page
+const locations = [
+  {
+    id: "madrid",
+    title: "MADRID CENTRO",
+    description: "Local con más de 700 m² repartidos en dos plantas con más de 450 m² escalables, Moon board, System Board, campus, gimnasio, parking de bicicletas, zona chill out y mucho más…",
+    image: "https://urbanmonkey.es/wp-content/uploads/2023/10/escalada-urban-monkey-scaled.jpg",
+    link: "/madrid"
+  },
+  {
+    id: "villalba",
+    title: "COLLADO VILLALBA",
+    description: "En nuestro centro de Villalba, con más de 500 m2 escalables, muros a distintas inclinaciones, vías de escalada, zona infantil, autoaseguradores, Moon Board, System Board, bar-restaurante y mucho más!",
+    image: "https://urbanmonkey.es/wp-content/uploads/2023/10/Rocodromo-urban-monkey-villalba-scaled.jpg",
+    link: "/villalba"
+  }
+];
+---
+
+<MainLayout title="Home">
+  <!-- Hero Section -->
+  <Hero
+    title="URBAN MONKEY"
+    subtitle="OTRA FORMA DE ENTENDER LA ESCALADA"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada-urban-monkey-scaled.jpg"
+    buttonText="DESCUBRE MÁS"
+    buttonLink="#locations"
+  />
+  
+  <!-- Welcome Section -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">BIENVENIDO A URBAN MONKEY</h2>
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-6">
+        Formando escaladores y escaladoras desde el año 2010
+      </p>
+      <div class="w-16 h-1 bg-[#118c30] mx-auto mb-8"></div>
+    </div>
+  </section>
+
+  <!-- Locations Section -->
+  <section id="locations" class="section-padding">
+    <div class="container-custom">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">NUESTROS CENTROS</h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {locations.map((location) => (
+          <div id={location.id} class="card overflow-hidden group h-full">
+            <div class="relative overflow-hidden">
+              <img 
+                src={location.image} 
+                alt={location.title} 
+                class="w-full h-80 object-cover transform group-hover:scale-105 transition-all duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70"></div>
+              <h3 class="absolute bottom-6 left-6 text-white text-3xl font-bold">{location.title}</h3>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-700 mb-4">{location.description}</p>
+              <a href={location.link} class="bg-[#118c30] btn outline-block">
+                Ver instalaciones
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities Section -->
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">CURSOS Y ACTIVIDADES</h2>
+      
+      <FeaturedActivities activities={featuredActivities} />
+      
+      <div class="text-center mt-12">
+        <a href="/cursos" class="bg-[#118c30] btn">
+          Ver todos los cursos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="relative py-20">
+    <div class="absolute inset-0 bg-[#118c30] flex items-center">
+      <div class="absolute inset-0 opacity-20" style="background-image: url('https://urbanmonkey.es/wp-content/uploads/2023/10/Vias_rocodromo_urban_monkey-scaled.jpg'); background-size: cover; background-position: center;"></div>
+    </div>
+    
+    <div class="container-custom relative z-10 text-center">
+      <div class="max-w-3xl mx-auto text-white">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">¿QUIERES PROBAR LA ESCALADA?</h2>
+        <p class="text-xl mb-8">
+          Ven a conocer nuestras instalaciones y descubre una nueva forma de entender la escalada
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/madrid/clase-prueba" class="btn bg-[#118c30] text-white hover:bg-gray-100">
+            Clase prueba Madrid
+          </a>
+          <a href="/villalba/clase-prueba" class="btn bg-[#118c30] text-white hover:bg-gray-100">
+            Clase prueba Villalba
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <NewsletterSection />
+</MainLayout>

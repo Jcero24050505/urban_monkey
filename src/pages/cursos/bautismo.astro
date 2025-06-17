@@ -1,0 +1,230 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+
+// Define price
+const price = {
+  amount: "25€ por persona",
+  includes: [
+    "Material necesario para la actividad",
+    "Monitor especializado",
+    "Sesión de 1.5 horas"
+  ]
+};
+
+// Define details
+const details = [
+  {
+    title: "DURACIÓN",
+    content: "Una hora y media."
+  },
+  {
+    title: "HORARIO",
+    content: "Fines de semana. Contacta con el centro donde quieres realizar el bautismo para que te indiquen los horarios disponibles."
+  },
+  {
+    title: "EL PRECIO INCLUYE",
+    content: "Todo el material necesario."
+  }
+];
+---
+
+<MainLayout title="Bautismo">
+  <!-- Hero Section -->
+  <Hero
+    title="BAUTISMO DE ESCALADA"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/bautismo-de-escalada-2-qeomlf6m7pihkgap8fwjdlcp8b724219jh0jya49h4.jpg"
+    height="h-[50vh]"
+  />
+  
+  <!-- Main Content -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+          <h2 class="text-3xl font-bold mb-6">PRIMERA TOMA DE CONTACTO CON LA ESCALADA</h2>
+          
+          <p class="text-lg mb-6">
+            El <strong>bautismo de escalada</strong> está dirigido para aquellas personas que quieran tener una primera toma de contacto con la escalada.
+          </p>
+          
+          <p class="text-lg mb-6">
+            El tiempo de duración es de una hora y media y en ella veremos:
+          </p>
+          
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Material básico para la escalada</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Técnicas básicas de movimiento</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Normas básicas de seguridad</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Escalada en boulder y con cuerda</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Juegos y ejercicios de iniciación</span>
+            </li>
+          </ul>
+          
+          <div class="bg-gray-50 p-6 rounded-lg">
+            {details.map((detail) => (
+              <div class="mb-4 last:mb-0">
+                <h3 class="text-lg font-bold">{detail.title}:</h3>
+                <p>{detail.content}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Image Gallery -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-8">BAUTISMO DE ESCALADA</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/bautismo-de-escalada-2-qeomlf6m7pihkgap8fwjdlcp8b724219jh0jya49h4.jpg" 
+            alt="Bautismo de escalada" 
+            class="w-full h-auto"
+          />
+        </div>
+        
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/bautismo-de-escalada-1.jpg" 
+            alt="Iniciación a la escalada" 
+            class="w-full h-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <h3 class="text-3xl font-bold text-center mb-12">PRECIO</h3>
+      
+      <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md border border-primary">
+        <div class="text-3xl font-bold text-primary text-center mb-6">{price.amount}</div>
+        
+        <h4 class="text-xl font-bold mb-4">El precio incluye:</h4>
+        <ul class="space-y-3 mb-8">
+          {price.includes.map((item) => (
+            <li class="flex items-start">
+              <svg class="h-5 w-5 text-primary mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        
+        <p class="text-gray-600 mb-6">
+          Los bautismos se realizan principalmente en fines de semana. Consulta disponibilidad en cada centro.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/madrid/contacto" class="btn flex-1 text-center">
+            Madrid Centro
+          </a>
+          <a href="/villalba/contacto" class="btn flex-1 text-center">
+            Villalba
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">LO QUE DICEN NUESTROS CLIENTES</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex text-primary mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="italic text-gray-600 mb-4">
+            "Increíble experiencia para mi primera vez escalando. El monitor fue muy paciente y profesional. ¡Repetiré seguro!"
+          </p>
+          <p class="font-bold">Laura G.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex text-primary mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="italic text-gray-600 mb-4">
+            "Fuimos en grupo y la experiencia fue genial. Nos explicaron todo muy bien y pudimos probar diferentes tipos de escalada."
+          </p>
+          <p class="font-bold">Carlos M.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex text-primary mb-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="italic text-gray-600 mb-4">
+            "Mi hija de 10 años disfrutó muchísimo del bautismo. Ahora quiere seguir con las clases semanales. Instalaciones muy buenas y personal amable."
+          </p>
+          <p class="font-bold">Ana R.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">¿QUIERES RESERVAR TU BAUTISMO DE ESCALADA?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Contacta con nosotros para reservar tu experiencia de iniciación a la escalada.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/madrid/contacto" class="btn bg-white text-primary hover:bg-gray-100">
+          Contactar Madrid
+        </a>
+        <a href="/villalba/contacto" class="btn bg-white text-primary hover:bg-gray-100">
+          Contactar Villalba
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,199 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import LocationFeatures from '../../components/sections/LocationFeatures.astro';
+
+// Define facility features
+const facilityFeatures = [
+  {
+    title: "ROCODROMO",
+    description: "Más de 500 m² escalables con muros a distintas inclinaciones, vías de escalada, zona infantil, autoaseguradores y mucho más.",
+    icon: "fas fa-mountain"
+  },
+  {
+    title: "VÍAS DE ESCALADA",
+    description: "Si lo que te gusta es la cuerda, ven y disfruta de nuestras vías de escalada para todos los niveles con autoaseguros.",
+    icon: "fas fa-route"
+  },
+  {
+    title: "MOON BOARD",
+    description: "Entrena en nuestra Moon Board, el sistema de entrenamiento internacional para mejorar tu fuerza y técnica.",
+    icon: "fas fa-square"
+  },
+  {
+    title: "SYSTEM BOARD",
+    description: "Desarrolla fuerza y técnica en nuestra System Board con múltiples opciones de entrenamiento.",
+    icon: "fas fa-th"
+  },
+  {
+    title: "BOULDER",
+    description: "Amplia zona de boulder con problemas para todos los niveles renovados periódicamente.",
+    icon: "fas fa-cubes"
+  },
+  {
+    title: "CAMPUS",
+    description: "Mejora tu fuerza de dedos y resistencia con nuestro campus board.",
+    icon: "fas fa-hand-rock"
+  },
+  {
+    title: "ZONA INFANTIL",
+    description: "Espacio específico para los más pequeños donde pueden iniciarse en la escalada de forma segura y divertida.",
+    icon: "fas fa-child"
+  },
+  {
+    title: "BAR Y RESTAURANTE",
+    description: "Disfruta de nuestra zona de bar y restaurante para reponer fuerzas después de tu sesión de escalada.",
+    icon: "fas fa-utensils"
+  }
+];
+
+// Contact information
+const contactInfo = {
+  address: "C/Husillo 12-14, 28400 – Collado Villalba (Madrid)",
+  phone: "+34 91 054 71 44",
+  email: "villalba@urbanmonkey.es"
+};
+---
+
+<MainLayout title="Villalba">
+  <!-- Hero Section -->
+  <Hero
+    title="NUESTRAS INSTALACIONES EN COLLADO VILLALBA"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/2023/10/Rocodromo-urban-monkey-villalba-scaled.jpg"
+    buttonText="VER TARIFAS"
+    buttonLink="/villalba/tarifas"
+    height="h-[60vh]"
+  />
+  
+  <!-- Intro Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">COLLADO VILLALBA</h2>
+        <p class="text-xl text-gray-700 mb-8">
+          En nuestro centro de Collado Villalba, con mas de 500 m², podrás disfrutar de unas instalaciones aptas para todos los niveles de escalada: muros a distintas inclinaciones, vías de escalada, zona infantil, autoaseguradores, Moon Board, System Board, bar-restaurante… y muchos más!!
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+          <a href="/villalba/tarifas" class="bg-[#118c30] btn">
+            Ver tarifas y horarios
+          </a>
+          <a href="/villalba/contacto" class="btn btn-secondary">
+            Contactar
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Image Gallery -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-8">NUESTRAS INSTALACIONES</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="aspect-square overflow-hidden rounded-lg">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/Rocodromo-urban-monkey-villalba-scaled.jpg" 
+            alt="Urban Monkey Villalba - Vista general" 
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-lg">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_urban_monkey2-scaled.jpg" 
+            alt="Urban Monkey Villalba - Boulder" 
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-lg">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_ninos_urban_monkey5.jpg" 
+            alt="Urban Monkey Villalba - Zona infantil" 
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">NUESTRAS INSTALACIONES INCLUYEN</h2>
+      
+      <LocationFeatures features={facilityFeatures} />
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">INFORMACIÓN DE CONTACTO</h2>
+        
+        <div class="bg-white rounded-lg shadow-md p-8">
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div class="md:w-1/2">
+              <h3 class="text-2xl font-bold mb-4">COLLADO VILLALBA</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-map-marker-alt text-primary"></i>
+                  </div>
+                  <span>{contactInfo.address}</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-phone-alt text-primary"></i>
+                  </div>
+                  <a href={`tel:${contactInfo.phone}`} class="hover:text-primary">{contactInfo.phone}</a>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-envelope text-primary"></i>
+                  </div>
+                  <a href={`mailto:${contactInfo.email}`} class="hover:text-primary">{contactInfo.email}</a>
+                </li>
+              </ul>
+              
+              <div class="mt-8">
+                <a href="/villalba/contacto" class="btn">
+                  Contactar
+                </a>
+              </div>
+            </div>
+            
+            <div class="md:w-1/2">
+              <div class="aspect-video rounded-lg overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3033.0638830576306!2d-4.025753284612108!3d40.52963167935005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4176a6e5a0a6cb%3A0x408db1a7953248cc!2sUrban%20Monkey%20Villalba!5e0!3m2!1sen!2ses!4v1649951234567!5m2!1sen!2ses" 
+                  width="100%" 
+                  height="100%" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Ubicación Urban Monkey Villalba"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">RESERVA TU CLASE DE PRUEBA</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        ¿Quieres probar la escalada? Reserva una clase de prueba y descubre una nueva forma de entender este deporte.
+      </p>
+      <a href="/villalba/clase-prueba" class="btn bg-white text-primary hover:bg-gray-100">
+        Reservar clase
+      </a>
+    </div>
+  </section>
+</MainLayout>

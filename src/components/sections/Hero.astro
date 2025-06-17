@@ -1,0 +1,49 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  backgroundImage: string;
+  buttonText?: string;
+  buttonLink?: string;
+  overlayOpacity?: string;
+  height?: string;
+}
+
+const { 
+  title, 
+  subtitle, 
+  backgroundImage,
+  buttonText,
+  buttonLink = '#',
+  overlayOpacity = 'bg-black/40',
+  height = 'h-[70vh]'
+} = Astro.props;
+---
+
+<section 
+  class={`relative ${height} flex items-center justify-center overflow-hidden`}
+  style={`background-image: url('${backgroundImage}'); background-size: cover; background-position: center;`}
+>
+  <div class={`absolute inset-0 ${overlayOpacity}`}></div>
+  
+  <div class="container-custom relative z-10 text-center text-white">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg animate-fade-in">
+      {title}
+    </h1>
+    
+    {subtitle && (
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8 drop-shadow-md animate-fade-in">
+        {subtitle}
+      </p>
+    )}
+    
+    {buttonText && (
+      <a 
+        href={buttonLink} 
+        class="bg-[#118c30] text-lg px-8 py-3 animate-fade-in"
+      >
+        {buttonText}
+      </a>
+    )}
+  </div>
+</section>

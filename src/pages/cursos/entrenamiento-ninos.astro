@@ -1,0 +1,238 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+
+// Define price plans
+const pricePlans = [
+  {
+    title: "Mensual",
+    price: "95€",
+    features: [
+      "2 clases por semana",
+      "Grupos reducidos por edades",
+      "Material incluido",
+      "Juegos y actividades adaptadas",
+      "Desarrollo de técnicas básicas"
+    ]
+  },
+  {
+    title: "Trimestral",
+    price: "240€",
+    features: [
+      "2 clases por semana",
+      "Grupos reducidos por edades",
+      "Material incluido",
+      "Juegos y actividades adaptadas",
+      "Desarrollo de técnicas básicas",
+      "Ahorro de 45€ respecto a la tarifa mensual"
+    ],
+    isHighlighted: true
+  },
+  {
+    title: "Anual",
+    price: "850€",
+    features: [
+      "2 clases por semana",
+      "Grupos reducidos por edades",
+      "Material incluido",
+      "Juegos y actividades adaptadas",
+      "Desarrollo de técnicas básicas",
+      "Ahorro de 290€ respecto a la tarifa mensual"
+    ]
+  }
+];
+---
+
+<MainLayout title="Grupos Entrenamiento Niños">
+  <!-- Hero Section -->
+  <Hero
+    title="GRUPOS DE ENTRENAMIENTO DIRIGIDO PARA NIÑOS"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/escalada_urban_monkey_ninos-scaled-qeomkk5xy6c0xbjr9khulb6hmlfy21m4f7hj45e96g.jpg"
+    height="h-[50vh]"
+  />
+  
+  <!-- Main Content -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">¡DIVIÉRTETE ESCALANDO!</h2>
+        
+        <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+          <div class="prose max-w-none">
+            <p class="text-lg mb-4">
+              Nuestros grupos de entrenamiento dirigido están diseñados para niños de entre <strong>6 y 14 años</strong> que deseen disfrutar de la escalada de una manera divertida y emocionante. En un ambiente seguro y estimulante, los pequeños escaladores podrán explorar su energía y creatividad, ¡como auténticos monos!
+            </p>
+            
+            <p class="text-lg mb-4">
+              A través de una variedad de juegos y ejercicios específicos, los niños aprenderán técnicas de movimiento y gestualidad que son fundamentales para la escalada. Además, estas actividades no solo son entretenidas, sino que también les ayudarán a desarrollar fuerza en sus extremidades superiores e inferiores, mejorando su coordinación y agilidad.
+            </p>
+            
+            <p class="text-lg mb-4">
+              Nuestro objetivo es fomentar el amor por la escalada mientras los niños se divierten y hacen nuevos amigos. ¡Únete a nosotros y descubre un mundo lleno de aventuras!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Image Gallery -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-8">ESCALADA PARA NIÑOS</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/escalada_urban_monkey_ninos-scaled-qeomkk5xy6c0xbjr9khulb6hmlfy21m4f7hj45e96g.jpg" 
+            alt="Niños escalando" 
+            class="w-full h-auto"
+          />
+        </div>
+        
+        <div class="overflow-hidden rounded-lg shadow-md">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_ninos_urban_monkey3-1-scaled.jpg" 
+            alt="Actividades de escalada para niños" 
+            class="w-full h-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">BENEFICIOS DE LA ESCALADA PARA NIÑOS</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fas fa-brain text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Desarrollo Cognitivo</h3>
+          <p class="text-gray-600">
+            La escalada estimula la capacidad de resolución de problemas y la toma de decisiones, mejorando el desarrollo cognitivo.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fas fa-dumbbell text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Fuerza y Resistencia</h3>
+          <p class="text-gray-600">
+            Desarrollo de la fuerza muscular y resistencia en todo el cuerpo, especialmente en brazos, piernas y core.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fas fa-balance-scale text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Equilibrio y Coordinación</h3>
+          <p class="text-gray-600">
+            Mejora del equilibrio, la coordinación motora y la propiocepción a través de movimientos precisos.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fas fa-heart text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Confianza</h3>
+          <p class="text-gray-600">
+            Aumento de la autoestima y confianza en sí mismos al superar retos y alcanzar objetivos.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fas fa-users text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Habilidades Sociales</h3>
+          <p class="text-gray-600">
+            Desarrollo de habilidades sociales como el trabajo en equipo, la comunicación y el apoyo mutuo.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <i class="fas fa-trophy text-primary text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Perseverancia</h3>
+          <p class="text-gray-600">
+            Aprendizaje de la perseverancia y la determinación para alcanzar metas a pesar de las dificultades.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h3 class="text-3xl font-bold text-center mb-12">PRECIO</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {pricePlans.map((plan) => (
+          <div class={`bg-white p-6 rounded-lg shadow-md border ${plan.isHighlighted ? 'border-primary relative' : 'border-gray-200'}`}>
+            {plan.isHighlighted && (
+              <div class="absolute -top-4 right-4 bg-primary text-white text-sm py-1 px-3 rounded-full">
+                Recomendado
+              </div>
+            )}
+            
+            <h4 class="text-xl font-bold mb-2">{plan.title}</h4>
+            <div class="text-3xl font-bold text-primary mb-4">{plan.price}</div>
+            
+            <ul class="space-y-2 mb-6">
+              {plan.features.map((feature) => (
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-primary mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      
+      <div class="mt-12 text-center">
+        <p class="text-lg mb-6">
+          Para más información sobre horarios y disponibilidad, consulta en nuestros centros:
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/madrid/contacto" class="btn">
+            Madrid Centro
+          </a>
+          <a href="/villalba/contacto" class="btn">
+            Collado Villalba
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">¿QUIERES QUE TU HIJO/A PRUEBE LA ESCALADA?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Reserva una clase de prueba y descubre todo lo que pueden aprender mientras se divierten.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/madrid/clase-prueba" class="btn bg-white text-primary hover:bg-gray-100">
+          Clase prueba Madrid
+        </a>
+        <a href="/villalba/clase-prueba" class="btn bg-white text-primary hover:bg-gray-100">
+          Clase prueba Villalba
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

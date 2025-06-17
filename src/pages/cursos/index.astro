@@ -1,0 +1,137 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import FeaturedActivities from '../../components/sections/FeaturedActivities.astro';
+
+// Define courses
+const courses = [
+  {
+    title: "ENTRENAMIENTO DIRIGIDO",
+    description: "Mejora tu técnica y diviértete con nuestros grupos de entrenamiento dirigido para todos los niveles.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/Entrenamientos_dirigidos_rocodromo_urban_monkey-scaled-qeomlktncpq7i42ibicasjxgsmf9e8nnk8xgtxvwfs.jpg",
+    link: "/cursos/entrenamiento"
+  },
+  {
+    title: "BAUTISMOS DE ESCALADA",
+    description: "Primera toma de contacto con la escalada. Sesiones de una hora y media para descubrir este deporte.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/bautismo-de-escalada-2-qeomlf6m7pihkgap8fwjdlcp8b724219jh0jya49h4.jpg",
+    link: "/cursos/bautismo"
+  },
+  {
+    title: "GRUPOS PARA NIÑOS",
+    description: "Actividades divertidas para niños de 6 a 14 años donde desarrollan fuerza, coordinación y agilidad.",
+    imageUrl: "https://urbanmonkey.es/wp-content/uploads/elementor/thumbs/escalada_urban_monkey_ninos-scaled-qeomkk5xy6c0xbjr9khulb6hmlfy21m4f7hj45e96g.jpg",
+    link: "/cursos/entrenamiento-ninos"
+  }
+];
+---
+
+<MainLayout title="Cursos">
+  <!-- Hero Section -->
+  <Hero
+    title="NUESTROS CURSOS DE ESCALADA"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_urban_monkey2-scaled.jpg"
+    height="h-[50vh]"
+  />
+  
+  <!-- Intro Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">FORMANDO ESCALADORES DESDE 2010</h2>
+        <p class="text-xl text-gray-700 mb-6">
+          En Urban Monkey ofrecemos diferentes cursos y actividades para todos los niveles. Desde iniciación para quienes nunca han escalado hasta entrenamiento específico para escaladores experimentados.
+        </p>
+        <p class="text-lg text-gray-600 mb-8">
+          Nuestros monitores titulados te guiarán en tu progresión, adaptándose a tus necesidades y ayudándote a alcanzar tus objetivos de forma segura y divertida.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Courses Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">NUESTROS CURSOS</h2>
+      
+      <FeaturedActivities activities={courses} />
+    </div>
+  </section>
+
+  <!-- Locations Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">NUESTROS CENTROS</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="card overflow-hidden group h-full">
+          <div class="relative overflow-hidden">
+            <img 
+              src="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada-urban-monkey-scaled.jpg" 
+              alt="Urban Monkey Madrid" 
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-all duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70"></div>
+            <h3 class="absolute bottom-6 left-6 text-white text-3xl font-bold">MADRID CENTRO</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4">
+              Local con más de 700 m² repartidos en dos plantas con más de 450 m² escalables, donde ofrecemos todos nuestros cursos y actividades.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="/madrid" class="btn">
+                Ver instalaciones
+              </a>
+              <a href="/madrid/contacto" class="btn btn-secondary">
+                Contactar
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card overflow-hidden group h-full">
+          <div class="relative overflow-hidden">
+            <img 
+              src="https://urbanmonkey.es/wp-content/uploads/2023/10/Rocodromo-urban-monkey-villalba-scaled.jpg" 
+              alt="Urban Monkey Villalba" 
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-all duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70"></div>
+            <h3 class="absolute bottom-6 left-6 text-white text-3xl font-bold">COLLADO VILLALBA</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4">
+              Más de 500 m² escalables, muros a distintas inclinaciones, vías de escalada, zona infantil, y mucho más para aprender y disfrutar de la escalada.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="/villalba" class="btn">
+                Ver instalaciones
+              </a>
+              <a href="/villalba/contacto" class="btn btn-secondary">
+                Contactar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-[#118c30]">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">¿QUIERES PROBAR LA ESCALADA?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Reserva una clase de prueba y descubre una nueva forma de entender este deporte.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/madrid/clase-prueba" class="btn bg-white text-primary hover:bg-gray-100">
+          Clase prueba Madrid
+        </a>
+        <a href="/villalba/clase-prueba" class="btn bg-white text-primary hover:bg-gray-100">
+          Clase prueba Villalba
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

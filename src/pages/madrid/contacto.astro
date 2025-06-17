@@ -1,0 +1,108 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import ContactForm from '../../components/common/ContactForm.astro';
+import LocationMap from '../../components/common/LocationMap.astro';
+
+// Contact information
+const contactInfo = {
+  address: "C/Tarragona 8, 28045 Madrid",
+  phone: "+34 91 530 94 94",
+  email: "registros@urbanmonkey.es"
+};
+---
+
+<MainLayout title="Contacto Madrid">
+  <!-- Hero Section -->
+  <Hero
+    title="DÓNDE ESTAMOS"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada-urban-monkey-scaled.jpg"
+    height="h-[40vh]"
+  />
+  
+  <!-- Contact Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">CONTACTA CON NOSOTROS</h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Information -->
+        <div>
+          <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <h3 class="text-2xl font-bold mb-6">MADRID CENTRO</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-map-marker-alt text-primary"></i>
+                </div>
+                <span class="mt-2">{contactInfo.address}</span>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-phone-alt text-primary"></i>
+                </div>
+                <a href={`tel:${contactInfo.phone}`} class="hover:text-primary mt-2">{contactInfo.phone}</a>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-envelope text-primary"></i>
+                </div>
+                <a href={`mailto:${contactInfo.email}`} class="hover:text-primary mt-2">{contactInfo.email}</a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Map -->
+          <LocationMap location="madrid" />
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <h3 class="text-2xl font-bold mb-6">ENVÍANOS UN MENSAJE</h3>
+          <ContactForm location="madrid" />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Opening Hours -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">HORARIO DE APERTURA</h2>
+        
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <div class="p-6 bg-primary text-white">
+              <h3 class="text-xl font-bold mb-4">Lunes a Viernes</h3>
+              <p class="text-lg">10:00 - 22:30</p>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-4">Sábados y Domingos</h3>
+              <p class="text-lg">10:00 - 21:00</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-8">
+          <a href="/madrid/tarifas" class="btn">
+            Ver todas las tarifas y horarios
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-primary">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">¿QUIERES PROBAR LA ESCALADA?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Reserva una clase de prueba y descubre una nueva forma de entender este deporte.
+      </p>
+      <a href="/madrid/clase-prueba" class="btn bg-white text-primary hover:bg-gray-100">
+        Reservar clase
+      </a>
+    </div>
+  </section>
+</MainLayout>

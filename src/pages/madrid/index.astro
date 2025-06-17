@@ -1,0 +1,209 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import LocationFeatures from '../../components/sections/LocationFeatures.astro';
+
+// Define facility features
+const facilityFeatures = [
+  {
+    title: "ROCODROMO",
+    description: "Local con más de 700 m² repartidos en dos plantas con más de 450 m² escalables. Ven a conocer el mejor rocódromo del centro de Madrid.",
+    icon: "fas fa-mountain bg-[#118c30] text-white p-3 rounded-full"
+  },
+  {
+    title: "MUROS FIBRA",
+    description: "Prueba nuestros distintos muros con diferente inclinación que hemos preparado para ti: 0º, 15º, 30º, 45º…",
+    icon: "fas fa-grip-lines-vertical bg-[#118c30] text-white p-3 rounded-full"
+  },
+  {
+    title: "MOON BOARD",
+    description: "Entrena en nuestra Moon Board, el sistema de entrenamiento internacional para mejorar tu fuerza y técnica.",
+    icon: "fas fa-square bg-[#118c30] text-white p-3 rounded-full"
+  },
+  {
+    title: "SYSTEM BOARD",
+    description: "Desarrolla fuerza y técnica en nuestra System Board con múltiples opciones de entrenamiento.",
+    icon: "fas fa-th bg-[#118c30] text-white p-3 rounded-full"
+  },
+  {
+    title: "ZONA BOULDER",
+    description: "Amplia zona de boulder con problemas para todos los niveles renovados periódicamente.",
+    icon: "fas fa-cubes bg-[#118c30] text-white p-3 rounded-full"
+  },
+  {
+    title: "VÍAS DE ESCALADA",
+    description: "Disfruta de nuestras vías de escalada con diferentes niveles de dificultad y alturas.",
+    icon: "fas fa-route bg-[#118c30] text-white p-3 rounded-full"
+  },
+  {
+    title: "GIMNASIO",
+    description: "Complementa tu entrenamiento de escalada con nuestro gimnasio equipado con material específico.",
+    icon: "fas fa-dumbbell bg-[#118c30] text-white p-3 rounded-full"
+  },
+  {
+    title: "CAMPUS Y ZONA MULTIPRESA",
+    description: "Mejora tu fuerza de dedos y resistencia con nuestro campus board y zona de multipresa.",
+    icon: "fas fa-hand-rock bg-[#118c30] text-white p-3 rounded-full"
+  },
+  {
+    title: "PARKING BICICLETAS",
+    description: "Ven en bicicleta y apárcala de forma segura en nuestro parking de bicicletas.",
+    icon: "fas fa-bicycle bg-[#118c30] text-white p-3 rounded-full"
+  },
+  {
+    title: "CHILLOUT & TIENDA",
+    description: "Relájate después de tu sesión en nuestra zona chill out y adquiere material especializado en nuestra tienda.",
+    icon: "fas fa-store bg-[#118c30] text-white p-3 rounded-full"
+  }
+];
+
+// Contact information
+const contactInfo = {
+  address: "C/Tarragona 8, 28045 Madrid",
+  phone: "+34 91 530 94 94",
+  email: "registros@urbanmonkey.es"
+};
+---
+
+<MainLayout title="Madrid">
+  <!-- Hero Section -->
+  <Hero
+    title="NUESTRAS INSTALACIONES EN MADRID CENTRO"
+    backgroundImage="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada-urban-monkey-scaled.jpg"
+    buttonText="VER TARIFAS"
+    buttonLink="/madrid/tarifas"
+    height="h-[60vh]"
+  />
+  
+  <!-- Intro Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">MADRID CENTRO</h2>
+        <p class="text-xl text-gray-700 mb-8">
+          Local con más de 700 m² repartidos en dos plantas con más de 450 m² escalables, Moon board, System Board, campus, gimnasio, parking de bicicletas, zona chill out y mucho más… Ven a conocer el mejor rocódromo del centro de Madrid.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+          <a href="/madrid/tarifas" class="bg-[#118c30] btn">
+            Ver tarifas y horarios
+          </a>
+          <a href="/madrid/contacto" class="btn btn-secondary">
+            Contactar
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Image Gallery -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-8">NUESTRAS INSTALACIONES</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="aspect-square overflow-hidden rounded-lg">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada-urban-monkey-scaled.jpg" 
+            alt="Urban Monkey Madrid - Vista general" 
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-lg">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/Vias_rocodromo_urban_monkey-scaled.jpg" 
+            alt="Urban Monkey Madrid - Vías de escalada" 
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-lg">
+          <img 
+            src="https://urbanmonkey.es/wp-content/uploads/2023/10/escalada_urban_monkey2-scaled.jpg" 
+            alt="Urban Monkey Madrid - Boulder" 
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">NUESTRAS INSTALACIONES INCLUYEN</h2>
+      
+      <LocationFeatures features={facilityFeatures} />
+    </div>
+  </section>
+
+  <!-- Contact Info -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">INFORMACIÓN DE CONTACTO</h2>
+        
+        <div class="bg-white rounded-lg shadow-md p-8">
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div class="md:w-1/2">
+              <h3 class="text-2xl font-bold mb-4">MADRID CENTRO</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-map-marker-alt bg-[#118c30] text-white p-3 rounded-full"></i>
+                  </div>
+                  <span>{contactInfo.address}</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-phone-alt bg-[#118c30] text-white p-3 rounded-full"></i>
+                  </div>
+                  <a href={`tel:${contactInfo.phone}`} class="hover:text-primary">{contactInfo.phone}</a>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-envelope bg-[#118c30] text-white p-3 rounded-full"></i>
+                  </div>
+                  <a href={`mailto:${contactInfo.email}`} class="hover:text-primary">{contactInfo.email}</a>
+                </li>
+              </ul>
+              
+              <div class="mt-8">
+                <a href="/madrid/contacto" class="bg-[#118c30] btn">
+                  Contactar
+                </a>
+              </div>
+            </div>
+            
+            <div class="md:w-1/2">
+              <div class="aspect-video rounded-lg overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.5184138091145!2d-3.697401684616127!3d40.398279979365486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422630caa1c7c7%3A0x78de4fa1348b0ae!2sUrban%20Monkey%20Madrid!5e0!3m2!1sen!2ses!4v1649951234567!5m2!1sen!2ses" 
+                  width="100%" 
+                  height="100%" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Ubicación Urban Monkey Madrid"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="section-padding bg-[#118c30]">
+    <div class="container-custom text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">RESERVA TU CLASE DE PRUEBA</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        ¿Quieres probar la escalada? Reserva una clase de prueba y descubre una nueva forma de entender este deporte.
+      </p>
+      <a href="/madrid/clase-prueba" class="btn bg-white text-gray-700 hover:bg-gray-100">
+        Reservar clase
+      </a>
+    </div>
+  </section>
+</MainLayout>

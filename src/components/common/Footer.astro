@@ -1,0 +1,119 @@
+---
+const currentYear = new Date().getFullYear();
+
+const madridInfo = {
+  address: "C/Tarragona 8, 28045 Madrid",
+  phone: "+34 91 530 94 94",
+  email: "registros@urbanmonkey.es"
+};
+
+const villalbaInfo = {
+  address: "C/Husillo 12-14, 28400 – Collado Villalba (Madrid)",
+  phone: "+34 91 054 71 44",
+  email: "villalba@urbanmonkey.es"
+};
+
+const socialMedia = [
+  { platform: "Instagram Madrid", icon: "fa-brands fa-instagram", url: "https://www.instagram.com/urbanmonkeymadrid/" },
+  { platform: "Facebook Madrid", icon: "fa-brands fa-facebook-f", url: "https://www.facebook.com/urbanmonkeymadrid" },
+  { platform: "Instagram Villalba", icon: "fa-brands fa-instagram", url: "https://www.instagram.com/urbanmonkeyvillalba/" },
+  { platform: "Facebook Villalba", icon: "fa-brands fa-facebook-f", url: "https://www.facebook.com/urbanmonkeyvillalba" }
+];
+
+const navLinks = [
+  { label: "Inicio", url: "/" },
+  { label: "Madrid", url: "/madrid" },
+  { label: "Villalba", url: "/villalba" },
+  { label: "Cursos", url: "/cursos" },
+  { label: "Actividades", url: "/actividades" },
+  { label: "Noticias", url: "/noticias" }
+];
+---
+
+<footer class="bg-[#118c30] text-white pt-12 pb-6">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Logo and Tagline -->
+      <div>
+        <img 
+          src="https://urbanmonkey.es/wp-content/uploads/2023/10/logo_urban_HOME.png" 
+          alt="Urban Monkey Logo" 
+          class="h-16 mb-4"
+        />
+        <p class="text-gray-300 mb-4">
+          Formando escaladores y escaladoras desde el año 2010
+        </p>
+        <div class="flex space-x-4 mt-4">
+          {socialMedia.map(social => (
+            <a 
+              href={social.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label={social.platform}
+              class="w-10 h-10 rounded-full bg-[#118c30] flex items-center justify-center transition-colors hover:bg-primary"
+            >
+              <i class={social.icon}></i>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Madrid Location -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">Madrid Centro</h3>
+        <address class="not-italic text-gray-300">
+          <p class="flex items-start mb-2">
+            <i class="fas fa-map-marker-alt mr-2 mt-1"></i>
+            <span>{madridInfo.address}</span>
+          </p>
+          <p class="flex items-center mb-2">
+            <i class="fas fa-phone-alt mr-2"></i>
+            <a href={`tel:${madridInfo.phone}`} class="hover:text-primary transition-colors">{madridInfo.phone}</a>
+          </p>
+          <p class="flex items-center mb-2">
+            <i class="fas fa-envelope mr-2"></i>
+            <a href={`mailto:${madridInfo.email}`} class="hover:text-primary transition-colors">{madridInfo.email}</a>
+          </p>
+        </address>
+      </div>
+
+      <!-- Villalba Location -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">Collado Villalba</h3>
+        <address class="not-italic text-gray-300">
+          <p class="flex items-start mb-2">
+            <i class="fas fa-map-marker-alt mr-2 mt-1"></i>
+            <span>{villalbaInfo.address}</span>
+          </p>
+          <p class="flex items-center mb-2">
+            <i class="fas fa-phone-alt mr-2"></i>
+            <a href={`tel:${villalbaInfo.phone}`} class="hover:text-primary transition-colors">{villalbaInfo.phone}</a>
+          </p>
+          <p class="flex items-center mb-2">
+            <i class="fas fa-envelope mr-2"></i>
+            <a href={`mailto:${villalbaInfo.email}`} class="hover:text-primary transition-colors">{villalbaInfo.email}</a>
+          </p>
+        </address>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">Enlaces rápidos</h3>
+        <ul class="space-y-2">
+          {navLinks.map(link => (
+            <li>
+              <a href={link.url} class="text-gray-300 hover:text-primary transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+      <p>&copy; {currentYear} Urban Monkey. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
